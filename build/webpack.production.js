@@ -2,13 +2,15 @@
 'use strict';
 
 import merge from 'webpack-merge';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 export default merge([
     {
+        // Tell webpack to minimize the bundle using the UglifyjsWebpackPlugin.
+        optimization: {
+            minimize: true,
+        },
+
         // Plugins for production only
-        plugins: [
-            new UglifyJSPlugin(),
-        ],
+        plugins: [],
     },
 ]);

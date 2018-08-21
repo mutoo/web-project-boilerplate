@@ -34,5 +34,10 @@ export default merge([
         output: {
             publicPath,
         },
+
+        // Turn off the minimize on development
+        optimization: {
+            minimize: false
+        },
     },
 ]);

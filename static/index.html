@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boilerplate</title>
+</head>
+<body>
+<script src='./assets/fallback.js'></script>
+<script>
+    // The fallback would try load script from webpack server
+    // if failed, it will load the built bundles
+    //
+    // N.B put global.BUNDLE_LOADED = true in app.js
+    // so the fallback would detect it
+    fallback.load({
+        BUNDLE_LOADED: ['//localhost:9000/bundle.js'],
+    }, {
+        callback: function (success, failed) {
+            if (!success.BUNDLE_LOADED) {
+                fallback.spawn.instance('styles', ['./assets/bundle.css']);
+                fallback.spawn.instance('BUNDLE_LOADED', ['./assets/bundle.js']);
+            }
+        }
+    });
+</script>
+</body>
+</html>

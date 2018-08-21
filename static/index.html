@@ -17,8 +17,8 @@
     }, {
         callback: function (success, failed) {
             if (!success.BUNDLE_LOADED) {
-                fallback.spawn.instance('styles', ['./assets/bundle.css']);
-                fallback.spawn.instance('BUNDLE_LOADED', ['./assets/bundle.js']);
+                fallback.spawn.instance('styles', ['./dist/bundle.css']);
+                fallback.spawn.instance('BUNDLE_LOADED', ['./dist/bundle.js']);
             }
         }
     });

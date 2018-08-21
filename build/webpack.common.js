@@ -4,7 +4,6 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import SvgStore from 'webpack-svgstore-plugin';
 
 import scss from './parts/scss';
 import javascript from './parts/javascript';

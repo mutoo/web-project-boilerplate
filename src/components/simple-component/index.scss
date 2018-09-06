@@ -1,0 +1,5 @@
+.simple {
+    @include testMixin;
+    font-size: 1.8rem;
+    color: gray;
+}

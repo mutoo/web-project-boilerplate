@@ -5,6 +5,10 @@
     <title>Boilerplate</title>
 </head>
 <body>
+<h1>Hello world!</h1>
+<div id="simple">
+    <simple></simple>
+</div>
 <script src='./assets/fallback.js'></script>
 <script>
     // The fallback would try load script from webpack server
@@ -15,12 +19,12 @@
     fallback.load({
         BUNDLE_LOADED: ['//localhost:9000/bundle.js'],
     }, {
-        callback: function (success, failed) {
+        callback: function(success, failed) {
             if (!success.BUNDLE_LOADED) {
                 fallback.spawn.instance('styles', ['./dist/bundle.css']);
                 fallback.spawn.instance('BUNDLE_LOADED', ['./dist/bundle.js']);
             }
-        }
+        },
     });
 </script>
 </body>

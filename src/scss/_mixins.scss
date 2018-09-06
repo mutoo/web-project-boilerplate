@@ -1,3 +1,7 @@
 // Global Mixins
 // =============
 // this file will be import into every component automatically.
+
+@mixin testMixin {
+    background: azure;
+}

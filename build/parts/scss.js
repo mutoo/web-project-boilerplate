@@ -3,7 +3,7 @@
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-let sourceMap = false;
+let sourceMap = true;
 let styleDirectory = path.resolve(__dirname, './../../src/scss');
 
 // Convert windows style path (c:\path\to\project) to unix style
@@ -11,6 +11,13 @@ let styleDirectory = path.resolve(__dirname, './../../src/scss');
 styleDirectory = styleDirectory.replace(/\\/g, '/');
 
 const scssUse = [
+    // sourcemap-path-fixer
+    {
+        loader: path.resolve(__dirname, '../loaders/sourcemap-path-fixer'),
+        options: {
+            sourceMap,
+        },
+    },
     // css-loader - Translates CSS into CommonJS
     {
         loader: 'css-loader',

@@ -11,43 +11,43 @@ import vueComponent from './parts/vue.component';
 import linting from './parts/linting';
 
 export default merge([
-    {
-        entry: path.resolve(__dirname, '../src/index.js'),
+  {
+    entry: path.resolve(__dirname, '../src/index.js'),
 
-        output: {
-            filename: 'bundle.js',
-            path: path.resolve(__dirname, '../static/dist'),
-        },
-
-        resolve: {
-            alias: {
-                'vue': 'vue/dist/vue.common.js',
-            },
-        },
-
-        // Plugins for all environments
-        plugins: [
-
-            // Make the jQuery and Vue libraries available globally
-            new webpack.ProvidePlugin({
-                'window.jQuery': 'jquery',
-                'jQuery': 'jquery',
-                '$': 'jquery',
-                'Vue': 'vue',
-            }),
-
-            // Use MiniCssExtractPlugin to generate a .css file
-            new MiniCssExtractPlugin({
-                filename: 'bundle.css',
-            }),
-        ],
+    output: {
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, '../static/dist'),
     },
 
-    javascript(),
+    resolve: {
+      alias: {
+        'vue': 'vue/dist/vue.common.js',
+      },
+    },
 
-    scss(),
+    // Plugins for all environments
+    plugins: [
 
-    vueComponent(),
+      // Make the jQuery and Vue libraries available globally
+      new webpack.ProvidePlugin({
+        'window.jQuery': 'jquery',
+        'jQuery': 'jquery',
+        '$': 'jquery',
+        'Vue': 'vue',
+      }),
 
-    linting(),
+      // Use MiniCssExtractPlugin to generate a .css file
+      new MiniCssExtractPlugin({
+        filename: 'bundle.css',
+      }),
+    ],
+  },
+
+  javascript(),
+
+  scss(),
+
+  vueComponent(),
+
+  linting(),
 ]);

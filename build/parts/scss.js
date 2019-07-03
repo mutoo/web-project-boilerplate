@@ -3,7 +3,7 @@
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-let sourceMap = false;
+let sourceMap = true;
 let styleDirectory = path.resolve(__dirname, './../../src/scss');
 
 // Convert windows style path (c:\path\to\project) to unix style

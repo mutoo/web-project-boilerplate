@@ -1,3 +1,17 @@
 // Index Scss
 // ==========
 // This file is the scss entry point.
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(10em / 16);
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+@import "typography";

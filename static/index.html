@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Boilerplate</title>
+  <meta charset="UTF-8">
+  <title>Boilerplate</title>
 </head>
 <body>
+<div id="site">
+  <h1>The Web project boilerplate</h1>
+  <p>This is a boilerplate for create web app with edge technologies.</p>
+  <ul>
+    <li>Webpack</li>
+    <li>ES6+</li>
+    <li>Scss</li>
+    <li>Vue Ready</li>
+  </ul>
+  <h2>Vue example</h2>
+  <div id="vue-app">
+    <vue-example></vue-example>
+  </div>
+</div>
 <script src='./assets/fallback.js'></script>
 <script>
-    // The fallback would try load script from webpack server
-    // if failed, it will load the built bundles
-    //
-    // N.B put global.BUNDLE_LOADED = true in app.js
-    // so the fallback would detect it
-    fallback.load({
-        BUNDLE_LOADED: ['//localhost:9000/bundle.js'],
-    }, {
-        callback: function (success, failed) {
-            if (!success.BUNDLE_LOADED) {
-                fallback.spawn.instance('styles', ['./dist/bundle.css']);
-                fallback.spawn.instance('BUNDLE_LOADED', ['./dist/bundle.js']);
-            }
-        }
-    });
+  // The fallback would try load script from webpack server
+  // if failed, it will load the built bundles
+  //
+  // N.B put global.BUNDLE_LOADED = true in app.js
+  // so the fallback would detect it
+  fallback.load({
+    BUNDLE_LOADED: ['//localhost:9000/bundle.js'],
+  }, {
+    callback: function(success, failed) {
+      if (!success.BUNDLE_LOADED) {
+        fallback.spawn.instance('styles', ['./dist/bundle.css']);
+        fallback.spawn.instance('BUNDLE_LOADED', ['./dist/bundle.js']);
+      }
+    },
+  });
 </script>
 </body>
 </html>

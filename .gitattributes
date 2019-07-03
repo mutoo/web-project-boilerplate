@@ -1,2 +1,1 @@
-# Set the default behaviour for handling line endings
-* text eol=lf        # Google styleguide expects LF line endings
+* text eol=lf

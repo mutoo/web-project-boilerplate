@@ -16,9 +16,6 @@ module.exports = {
         ],
     },
     'globals': {
-        'SETTINGS': true,
-        'Drupal': true,
-        'drupalSettings': true,
     },
     'plugins': [
         'vue'

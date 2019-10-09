@@ -11,7 +11,7 @@ import linting from './parts/linting';
 
 export default merge([
   {
-    entry: path.resolve(__dirname, '../src/index.js'),
+    entry: path.resolve(__dirname, '../src/index.jsx'),
 
     output: {
       filename: 'bundle.js',
@@ -19,8 +19,7 @@ export default merge([
     },
 
     resolve: {
-      alias: {
-      },
+      extensions: ['.js', '.jsx'],
     },
 
     // Plugins for all environments

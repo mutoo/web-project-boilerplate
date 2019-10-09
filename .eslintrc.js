@@ -1,7 +1,6 @@
 module.exports = {
     'extends': [
         'google',
-        'plugin:vue/essential'
     ],
     'parserOptions': {
         'ecmaVersion': 6,
@@ -18,6 +17,5 @@ module.exports = {
     'globals': {
     },
     'plugins': [
-        'vue'
     ]
 };

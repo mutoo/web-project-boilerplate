@@ -7,7 +7,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import scss from './parts/scss';
 import javascript from './parts/javascript';
-import vueComponent from './parts/vue.component';
 import linting from './parts/linting';
 
 export default merge([
@@ -21,19 +20,17 @@ export default merge([
 
     resolve: {
       alias: {
-        'vue': 'vue/dist/vue.common.js',
       },
     },
 
     // Plugins for all environments
     plugins: [
 
-      // Make the jQuery and Vue libraries available globally
+      // Make the jQuery available globally
       new webpack.ProvidePlugin({
         'window.jQuery': 'jquery',
         'jQuery': 'jquery',
         '$': 'jquery',
-        'Vue': 'vue',
       }),
 
       // Use MiniCssExtractPlugin to generate a .css file
@@ -46,8 +43,6 @@ export default merge([
   javascript(),
 
   scss(),
-
-  vueComponent(),
 
   linting(),
 ]);

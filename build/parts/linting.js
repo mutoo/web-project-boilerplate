@@ -7,7 +7,7 @@ export default () => ({
         // To be safe, use enforce: "pre" section to check source files,
         // not modified by other loaders (like babel-loader)
         enforce: 'pre',
-        test: /\.(js|vue)$/,
+        test: /\.(js)$/,
         exclude: [
           /node_modules/,
           /libs/,

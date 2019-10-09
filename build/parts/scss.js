@@ -44,7 +44,7 @@ const scssUse = [
             data: '@import \'variables\'; @import \'mixins\'; $env: ' +
             process.env.NODE_ENV + ';',
 
-            // allow vue component import file form these directories
+            // allow components import file form these directories
             includePaths: [styleDirectory],
 
             sourceMap,
@@ -58,15 +58,6 @@ export default () => ({
             {
                 test: /\.scss$/,
                 oneOf: [
-                    {
-                        resourceQuery: /^\?vue/,
-                        use: [
-                            process.env.NODE_ENV === 'production' ?
-                                MiniCssExtractPlugin.loader :
-                                'vue-style-loader',
-                            ...scssUse,
-                        ],
-                    },
                     {
                         use: [
                             process.env.NODE_ENV === 'production' ?

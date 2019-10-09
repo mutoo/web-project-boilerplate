@@ -1,4 +1,4 @@
-A boilerplate for creating web project with webpack, es6, scss, and vue.
+A boilerplate for creating web project with webpack, es6, scss.
 
 ### Install
 

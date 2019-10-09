@@ -1,6 +1,5 @@
-'use strict';
-
 import merge from 'webpack-merge';
+import path from 'path';
 
 let devServer = {
   host: 'localhost',
@@ -14,6 +13,8 @@ let devServer = {
   headers: {
     'Access-Control-Allow-Origin': '*',
   },
+  contentBase: path.join(__dirname, '../static'),
+  historyApiFallback: true,
   inline: true,
 };
 
